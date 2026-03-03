@@ -33,38 +33,45 @@ A small but modern web application to explore characters and locations from the 
 
 ## 📦 Project Structure
 ```
+```
 rick-and-morty/
 ├── src/
 │   ├── components/
-│   │   ├── CharacterCard.tsx       # Card component with details
-│   │   ├── CharactersTab.tsx       # Tab content 
-│   │   ├── LocationCard.tsx        # Location Card component
-│   │   ├── LocationsTab.tsx        # Locations tab content 
-│   │   └── Tabs.tsx                # Tab navigation component
+│   │   ├── CharacterCard.tsx           # Character card component
+│   │   ├── CharacterCard.styles.ts     # Character card styles
+│   │   ├── CharactersTab.tsx           # Characters tab content
+│   │   ├── CharactersTab.styles.ts     # Characters tab styles
+│   │   ├── LocationCard.tsx            # Location card component
+│   │   ├── LocationCard.styles.ts      # Location card styles
+│   │   ├── LocationsTab.tsx            # Locations tab content
+│   │   ├── LocationsTab.styles.ts      # Locations tab styles
+│   │   ├── Tabs.tsx                    # Tab navigation component
+│   │   └── Tabs.styles.ts              # Tabs styles
 │   ├── hooks/
-│   │   ├── useCharacters.ts        # Hook for characters
-│   │   └── useLocations.ts         # Hook for locations
+│   │   ├── useCharacters.ts            # React Query hook for characters
+│   │   └── useLocations.ts             # React Query hook for locations
 │   ├── types/
-│   │   └── api.ts                  # Interfaces for API responses
+│   │   └── api.ts                      # TypeScript interfaces for API
 │   ├── styles/
-│   │   ├── GlobalStyles.ts         # Global styled-components
-│   │   ├── theme.ts                # Theme configuration with design tokens
-│   │   ├── styled.d.ts             # TypeScript definitions for theme
-│   │   └── globals.css             # CSS global styles
+│   │   ├── GlobalStyles.ts             # Global styled-components
+│   │   ├── theme.ts                    # Theme with design tokens
+│   │   ├── styled.d.ts                 # TypeScript theme definitions
+│   │   └── globals.css                 # CSS global styles
 │   └── pages/
-│       ├── _app.tsx                # App wrapper with providers
-│       ├── _document.tsx           # Document configuration
-│       ├── index.tsx               # Home page
-│       └── api/                    # API routes
-├── public/                         # Static assets
-├── .babelrc                        # Babel configuration for styled-components
+│       ├── _app.tsx                    # App wrapper with providers
+│       ├── _document.tsx               # Document configuration
+│       ├── index.tsx                   # Home page
+│       └── api/                        # API routes
+├── public/                             # Static assets
+├── .babelrc                            # Babel config for styled-components
 ├── .gitignore
-├── eslint.config.mjs               # ESLint configuration
-├── next.config.ts                  # Next.js configuration
-├── next-env.d.ts                   # Next.js TypeScript definitions
-├── package.json                    # Dependencies and scripts
-├── tsconfig.json                   # TypeScript configuration
+├── eslint.config.mjs                   # ESLint configuration
+├── next.config.ts                      # Next.js configuration
+├── next-env.d.ts                       # Next.js TypeScript definitions
+├── package.json                        # Dependencies and scripts
+├── tsconfig.json                       # TypeScript configuration
 └── README.md
+```
 ```
 
 
@@ -77,7 +84,7 @@ rick-and-morty/
    npm install
    npm run dev```
 
- ### Notas  
+ ### Notes  
 
 -Due to the size of the project, a simple (Flat) folder structure was chosen. If this were a larger project, I would choose an Atomic Design or Feature-Based structure, also depending on the size of the team.
 
