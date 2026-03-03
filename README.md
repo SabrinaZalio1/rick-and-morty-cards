@@ -32,7 +32,7 @@ A small but modern web application to explore characters and locations from the 
 
 
 ## 📦 Project Structure
-```
+
 ```
 rick-and-morty/
 ├── src/
@@ -72,7 +72,7 @@ rick-and-morty/
 ├── tsconfig.json                       # TypeScript configuration
 └── README.md
 ```
-```
+
 
 
 ## 📦 Installation
