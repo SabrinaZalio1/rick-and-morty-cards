@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Tabs } from '@/components/Tabs';
 import { CharactersTab } from '@/components/CharactersTab';
@@ -29,8 +29,26 @@ const Subtitle = styled.p`
   color: ${props => props.theme.colors.text.secondary};
 `;
 
+const LoadingScreen = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  color: ${props => props.theme.colors.primary};
+`;
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'characters' | 'locations'>('characters');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen>Loading...</LoadingScreen>;
+  }
 
   return (
     <Container>
