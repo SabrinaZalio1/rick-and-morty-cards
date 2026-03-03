@@ -1,40 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🚀 Rick and Morty Explorer
 
-## Getting Started
+A small but modern web application to explore characters and locations from the Rick and Morty universe, built with Next.js and TypeScript.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 📊 **Dual Tab Navigation**: Browse between Characters and Locations
+- 🎨 **Themed Design**: Rick and Morty-inspired color palette with glowing effects
+- ⚡ **Smart Caching**: No unnecessary API refetches when switching tabs
+- ♿ **Accessibility First**: WCAG compliant with ARIA labels, keyboard navigation, and semantic HTML
+- 📱 **Responsive Grid**: Auto-fill layout adapting to all screen sizes
+- 🎯 **Type Safe**: Full TypeScript implementation
+- 🔄 **Loading States**: Smooth loading and error handling
+
+## 🛠️ Technologies Used
+
+### Core
+- **[Next.js](https://nextjs.org/)** (14.x) - React framework with Pages Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[React](https://react.dev/)** (18.x) - UI library
+
+### Styling
+- **[styled-components](https://styled-components.com/)** - CSS-in-JS styling
+- Custom theme system with design tokens
+
+### Data Fetching
+- **[Axios](https://axios-http.com/)** - HTTP client
+- **[@tanstack/react-query](https://tanstack.com/query)** (v5) - Server state management with caching
+
+### API
+- **[Rick and Morty API](https://rickandmortyapi.com/)** - Public REST API
+
+
+## 📦 Project Structure
+```
+rick-and-morty/
+├── src/
+│   ├── components/
+│   │   ├── CharacterCard.tsx       # Card component with details
+│   │   ├── CharactersTab.tsx       # Tab content 
+│   │   ├── LocationCard.tsx        # Location Card component
+│   │   ├── LocationsTab.tsx        # Locations tab content 
+│   │   └── Tabs.tsx                # Tab navigation component
+│   ├── hooks/
+│   │   ├── useCharacters.ts        # Hook for characters
+│   │   └── useLocations.ts         # Hook for locations
+│   ├── types/
+│   │   └── api.ts                  # Interfaces for API responses
+│   ├── styles/
+│   │   ├── GlobalStyles.ts         # Global styled-components
+│   │   ├── theme.ts                # Theme configuration with design tokens
+│   │   ├── styled.d.ts             # TypeScript definitions for theme
+│   │   └── globals.css             # CSS global styles
+│   └── pages/
+│       ├── _app.tsx                # App wrapper with providers
+│       ├── _document.tsx           # Document configuration
+│       ├── index.tsx               # Home page
+│       └── api/                    # API routes
+├── public/                         # Static assets
+├── .babelrc                        # Babel configuration for styled-components
+├── .gitignore
+├── eslint.config.mjs               # ESLint configuration
+├── next.config.ts                  # Next.js configuration
+├── next-env.d.ts                   # Next.js TypeScript definitions
+├── package.json                    # Dependencies and scripts
+├── tsconfig.json                   # TypeScript configuration
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📦 Installation
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd rick-and-morty
+   npm install
+   npm run dev```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+ ### Notas  
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-Por el tamaño del proyecto se decidio elegir una estructura de carpetas simples (Flat). En el caso de tener un proyecto de mayor tamaño, elegiria una estructura de Atomic Design o Feature-Based, dependiendo tambien en el tamaño del equipo.
 
-## Learn More
+- Si bien se utilizo styled-components, creo que Tailwind Tailwind CSS ofrece mas ventajas de performance sobre styled-components por su enfoque de utilidades pre-compiladas. Al generar todo el CSS en build time, elimina completamente el overhead de procesar estilos en JavaScript durante la ejecución. Esto resulta en bundles más pequeños, ya que Tailwind purga automáticamente todas las clases no utilizadas, resultando típicamente en archivos CSS de menos de 10KB. Además, al no necesitar calcular estilos dinámicamente en cada render, los componentes se renderizan más rápido. A su vez, es mas rapido de escribir y de leer.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+   
